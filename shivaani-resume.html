@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resume · Shivaani Mathan Kandasamy</title>
+<meta name="description" content="Resume of Shivaani Mathan Kandasamy — Associate UI/UX Designer at Lollypop Design Studio, Chennai. Experience, competencies, stack and education." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   SYSTEM — near-monochrome, like the reference.
+   One ink, one bone, CTA is always maximum contrast (black on light,
+   bone on dark). No chromatic accent: the work supplies the colour.
+   ========================================================================== */
+:root{
+  --ink:#0A0A0B;
+  --ink-2:#141416;
+  --bone:#F4F2EE;
+  --bone-2:#E6E3DC;
+
+  --display:"Archivo",-apple-system,"Segoe UI",sans-serif;
+  --body:"Hanken Grotesk",-apple-system,"Segoe UI",sans-serif;
+  --mono:"Hanken Grotesk",-apple-system,"Segoe UI",sans-serif;
+
+  --pad:clamp(20px,5vw,72px);
+  --max:1360px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);font-size:16px;line-height:1.6;background:var(--ink);color:var(--bone);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--bone);color:var(--ink)}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* --- alternating bands --- */
+.band{background:var(--bg);color:var(--fg);position:relative}
+.band--dark{--bg:var(--ink);--surface:var(--ink-2);--fg:var(--bone);
+  --fg-mute:rgba(244,242,238,.52);--line:rgba(244,242,238,.14);
+  --cta-bg:var(--bone);--cta-fg:var(--ink)}
+.band--light{--bg:var(--bone);--surface:var(--bone-2);--fg:var(--ink);
+  --fg-mute:rgba(10,10,11,.54);--line:rgba(10,10,11,.14);
+  --cta-bg:var(--ink);--cta-fg:var(--bone)}
+[id]{scroll-margin-top:clamp(92px,12vh,124px)}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.sec{padding:clamp(124px,20vh,270px) 0}
+
+/* --- type roles --- */
+.disp{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 108;
+  letter-spacing:-.038em;line-height:.98}
+.disp i{font-style:italic;font-weight:500}
+.mono,.eyebrow{font-family:var(--mono);font-weight:600;font-size:11px;font-weight:400;
+  letter-spacing:.17em;text-transform:uppercase}
+.eyebrow{color:var(--fg-mute)}
+.sec__head{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;flex-wrap:wrap;
+  padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:clamp(48px,8vh,96px)}
+.sec__title{font-size:clamp(1.9rem,4.2vw,3.2rem)}
+
+/* ==========================================================================
+   NAV — glass pill, inverts over light bands
+   ========================================================================== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:90}
+.nav__in{max-width:var(--max);margin:0 auto;padding:14px var(--pad)}
+.glass{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:9px 9px 9px 22px;border-radius:999px;
+  background:color-mix(in srgb,var(--nb) 58%,transparent);
+  border:1px solid color-mix(in srgb,var(--nf) 13%,transparent);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);
+  box-shadow:0 10px 40px -16px rgba(0,0,0,.45);color:var(--nf);
+  transition:background .55s var(--ease),color .55s var(--ease),border-color .55s var(--ease)}
+.nav{--nb:var(--ink);--nf:var(--bone);--ncb:var(--bone);--ncf:var(--ink)}
+.nav.on-light{--nb:var(--bone);--nf:var(--ink);--ncb:var(--ink);--ncf:var(--bone)}
+.mark{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 108;
+  font-size:16px;letter-spacing:-.03em;white-space:nowrap}
+.nav__links{display:flex;gap:28px}
+.nav__links a{font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.11em;text-transform:uppercase;
+  opacity:.6;transition:opacity .25s var(--ease)}
+.nav__links a:hover{opacity:1}
+.nav .cta{background:var(--ncb);color:var(--ncf)}
+
+/* --- CTA: black on light, bone on dark --- */
+.cta{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
+  background:var(--cta-bg);color:var(--cta-fg);
+  font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.11em;text-transform:uppercase;
+  padding:13px 22px;border-radius:999px;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(0,0,0,.5)}
+.cta em{font-style:normal;transition:transform .35s var(--ease)}
+.cta:hover em{transform:translateY(3px)}
+.cta--lg{padding:18px 30px;font-size:12px}
+.ghost{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:999px;
+  padding:17px 26px;font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--fg-mute);transition:color .3s var(--ease),border-color .3s var(--ease)}
+.ghost:hover{color:var(--fg);border-color:var(--fg)}
+.burger{display:none;background:none;border:0;color:inherit;font-family:var(--mono);font-weight:600;font-size:11px;
+  letter-spacing:.11em;text-transform:uppercase;cursor:pointer;padding:13px 18px}
+
+/* ==========================================================================
+   HERO — one spoken sentence, key facts set as inline pills
+   ========================================================================== */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(96px,12vh,132px) 0 clamp(74px,10vh,132px)}
+.hero__top{display:flex;justify-content:flex-start;align-items:flex-start;gap:20px;
+  margin-bottom:clamp(18px,3vh,32px)}
+
+.rot{height:15px;overflow:hidden;position:relative;min-width:120px}
+.rot b{position:absolute;left:0;top:0;font-family:var(--mono);font-weight:600;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--fg);
+  opacity:0;transform:translateY(100%);transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.rot b.on{opacity:1;transform:none}
+.rot b.out{opacity:0;transform:translateY(-100%)}
+
+.say{font-family:var(--display);font-weight:500;font-variation-settings:"wdth" 100;
+  font-size:clamp(1.45rem,3.7vw,3.35rem);line-height:1.56;letter-spacing:-.028em;
+  max-width:none;text-wrap:balance}
+.say .w{display:inline-block;opacity:0;transform:translateY(28px);
+  transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.say .w.in{opacity:1;transform:none}
+
+/* the pills */
+.pill{display:inline-block;border-radius:999px;padding:.12em .46em .19em;line-height:1.06;
+  margin:.05em 0;white-space:nowrap;font-weight:600;letter-spacing:-.026em;cursor:default;
+  transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease)}
+.pill:hover{transform:translateY(-3px) rotate(-1.2deg)}
+.pill--solid{background:var(--fg);color:var(--bg)}
+.pill--raised{background:color-mix(in srgb,var(--fg) 14%,transparent);color:var(--fg);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 26%,transparent)}
+.pill--raised:hover{background:color-mix(in srgb,var(--fg) 24%,transparent)}
+.pill--ghost{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 26%,transparent);
+  color:var(--fg);font-weight:500}
+.pill--ghost:hover{background:var(--fg);color:var(--bg)}
+
+.hero__base{display:flex;justify-content:space-between;align-items:flex-end;gap:clamp(20px,4vw,60px);
+  flex-wrap:wrap;margin-top:clamp(38px,6vh,66px);padding-top:clamp(26px,4vh,42px);
+  border-top:1px solid var(--line)}
+.hero__acts{display:flex;flex-wrap:wrap;gap:11px}
+.hero__meta{display:flex;flex-direction:column;gap:7px;text-align:right}
+.hero__meta span{font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--fg-mute)}
+.hero__cue{display:flex;align-items:center;gap:10px;margin-top:clamp(22px,3.2vh,36px);
+  font-family:var(--mono);font-weight:600;font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--fg-mute)}
+.hero__cue i{display:block;width:1px;height:26px;background:currentColor;opacity:.5;
+  animation:cue 2.4s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%,100%{transform:scaleY(.3);opacity:.25}50%{transform:scaleY(1);opacity:.7}}
+
+
+/* ==========================================================================
+   ABOUT — statement, quote, portrait, stats  (mirrors the reference)
+   ========================================================================== */
+.about__stmt{font-size:clamp(1.9rem,5.4vw,4.4rem);max-width:17ch}
+.about__stmt w{display:inline-block;color:color-mix(in srgb,var(--fg) 17%,transparent);
+  transition:color .4s ease}
+.about__stmt w.lit{color:var(--fg)}
+.about__stmt w.key{font-style:italic;font-weight:500}
+
+.about__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);
+  gap:clamp(32px,6vw,100px);align-items:start;margin-top:clamp(56px,9vh,110px);
+  padding-top:clamp(44px,6.5vh,72px);border-top:1px solid var(--line)}
+.quote{font-family:var(--display);font-weight:400;font-size:clamp(1.05rem,1.9vw,1.5rem);
+  line-height:1.42;letter-spacing:-.02em;max-width:30ch}
+.about__body p{color:var(--fg-mute);max-width:56ch;font-size:16px;line-height:1.78}
+.about__body p + p{margin-top:20px}
+.about__body .creed{color:var(--fg);font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.2;letter-spacing:-.03em;
+  margin-top:clamp(26px,4vh,40px);padding-top:clamp(20px,3vh,28px);border-top:1px solid var(--line);
+  max-width:none}
+.about__body strong{color:var(--fg);font-weight:600}
+.quote + p strong{color:var(--fg);font-weight:600}
+.about__acts{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+
+.portrait__f{aspect-ratio:4/5;border-radius:3px;overflow:hidden;position:relative;display:grid;
+  place-items:center;background:linear-gradient(160deg,var(--surface),var(--bg));border:1px solid var(--line)}
+.portrait__f img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.portrait__ph b{font-family:var(--display);font-weight:600;font-size:42px;letter-spacing:-.05em;
+  opacity:.18;display:block;line-height:1;text-align:center}
+.portrait__ph i{font-family:var(--mono);font-weight:600;font-style:normal;font-size:9px;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.4;display:block;margin-top:9px;text-align:center}
+.portrait__cap{margin-top:14px}
+.portrait__cap b{display:block;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.02em}
+.portrait__cap i{display:block;font-style:normal;font-family:var(--mono);font-weight:600;font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--fg-mute);margin-top:5px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:0 clamp(14px,2.4vw,40px);border-left:1px solid var(--line);text-align:center}
+.stat:first-child{border-left:0}
+.stat__n{font-size:clamp(3rem,7.6vw,6.6rem);display:flex;align-items:flex-start;line-height:.9;
+  justify-content:center}
+.stat__n u{text-decoration:none;font-size:.32em;margin-top:.16em;margin-left:.04em;opacity:.45}
+.stat__l{font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--fg-mute);margin-top:14px;line-height:1.65}
+
+/* ==========================================================================
+   CASE STUDIES — reference-style numbered tiles
+   ========================================================================== */
+.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,22px)}
+.cc{position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;
+  padding:clamp(22px,2.6vw,36px);min-height:clamp(300px,38vh,420px);
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:var(--surface);transition:transform .55s var(--ease),border-color .45s var(--ease)}
+.cc:hover{transform:translateY(-6px);border-color:var(--fg)}
+.cc__img{position:absolute;inset:0;z-index:0;opacity:0;transform:scale(1.07);
+  transition:opacity .55s var(--ease),transform 1s var(--ease)}
+.cc:hover .cc__img,.cc:focus-visible .cc__img{opacity:1;transform:scale(1)}
+.cc__img img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(.82) contrast(1.02)}
+.cc__img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,10,11,.52) 0%,rgba(10,10,11,.60) 30%,rgba(10,10,11,.88) 68%,rgba(10,10,11,.97) 100%)}
+.cc__n,.cc__t,.cc__go,.cc__top{transition:transform .55s var(--ease)}
+.cc:hover .cc__n,.cc:hover .cc__t,.cc:hover .cc__go{transform:translateY(-4px)}
+.cc:hover .cc__top,.cc:hover .cc__n,.cc:hover .cc__t b,.cc:hover .cc__go{color:var(--bone)}
+.cc:hover .cc__t b{border-color:rgba(244,242,238,.32)}
+.cc__top{position:relative;z-index:1}
+.cc__b{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start}
+.cc__top{display:flex;justify-content:space-between;font-family:var(--mono);font-weight:600;font-size:10.5px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--fg-mute)}
+.cc__n{font-size:clamp(1.7rem,3.4vw,2.9rem)}
+.cc__t{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.cc__t b{font-family:var(--mono);font-weight:600;font-size:9.5px;letter-spacing:.08em;
+  text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--fg-mute)}
+.cc{cursor:pointer}
+.cc__go{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-family:var(--mono);
+  font-weight:600;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--fg-mute);
+  border-bottom:1px solid transparent;padding-bottom:5px;align-self:flex-start;
+  transition:color .35s var(--ease),border-color .35s var(--ease),gap .35s var(--ease)}
+.cc:hover .cc__go{color:var(--fg);border-bottom-color:currentColor;gap:16px}
+.cc--nda{opacity:.72}
+
+/* ==========================================================================
+   SKILLSET
+   ========================================================================== */
+.skr{display:grid;grid-template-columns:clamp(150px,22vw,280px) minmax(0,1fr);gap:clamp(20px,4vw,60px);
+  padding:clamp(32px,5vh,56px) 0;border-bottom:1px solid var(--line);align-items:start}
+.skr__h{display:flex;align-items:baseline;gap:12px}
+.skr__h h3{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 108;
+  font-size:clamp(1.25rem,2.3vw,1.9rem);letter-spacing:-.028em}
+.skr__h span{font-family:var(--mono);font-weight:600;font-size:11.5px;letter-spacing:.13em;color:var(--fg-mute)}
+.skr__t{display:flex;flex-wrap:wrap;gap:9px}
+.skr__t b{font-family:var(--body);font-weight:500;font-size:14px;border:1px solid var(--line);
+  border-radius:999px;padding:9px 17px;color:var(--fg-mute);
+  transition:color .28s var(--ease),background .28s var(--ease),border-color .28s var(--ease)}
+.skr__t b:hover{color:var(--bg);background:var(--fg);border-color:var(--fg)}
+.sk__values{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:baseline;margin-top:clamp(30px,4.6vh,50px)}
+.sk__values span{font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--fg-mute)}
+.sk__values b{font-family:var(--display);font-weight:600;font-size:clamp(1.1rem,2.2vw,1.7rem);letter-spacing:-.03em}
+
+/* ==========================================================================
+   BRANDS — slow automatic carousel
+   ========================================================================== */
+.brands__lead{font-size:clamp(1.5rem,3.6vw,2.8rem);max-width:20ch;margin-bottom:clamp(56px,9vh,104px)}
+.rail{overflow:hidden;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.rail__track{display:flex;width:max-content;animation:rail 60s linear infinite}
+.rail:hover .rail__track{animation-play-state:paused}
+@keyframes rail{to{transform:translateX(-50%)}}
+.rail__set{display:flex;flex-shrink:0}
+.brand{width:clamp(190px,19vw,268px);height:clamp(110px,13vw,150px);display:grid;place-items:center;
+  padding:0 clamp(20px,2.2vw,34px);border-right:1px solid var(--line);flex-shrink:0}
+.brand img{width:100%;height:auto;opacity:.52;transition:opacity .4s var(--ease)}
+.brand:hover img{opacity:1}
+.brand img + .wm{display:none}
+.wm{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 100;
+  font-size:clamp(13px,1.4vw,18px);letter-spacing:.01em;text-transform:uppercase;text-align:center;
+  line-height:1.16;color:var(--fg-mute);transition:color .35s var(--ease)}
+.brand:hover .wm{color:var(--fg)}
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+.contact{padding:clamp(130px,21vh,270px) 0 52px}
+.contact__h{font-size:clamp(2.3rem,7.4vw,6.2rem);max-width:12ch}
+.contact__h i{font-style:italic;font-weight:500;color:var(--fg-mute)}
+.contact__mail{display:inline-flex;align-items:center;gap:14px;margin-top:clamp(30px,5vh,52px);
+  font-family:var(--display);font-weight:500;font-size:clamp(1.05rem,2.5vw,1.9rem);letter-spacing:-.03em;
+  border-bottom:1px solid var(--line);padding-bottom:8px;
+  transition:gap .35s var(--ease),border-color .35s var(--ease)}
+.contact__mail:hover{gap:24px;border-color:var(--fg)}
+.contact__acts{display:flex;flex-wrap:wrap;gap:11px;margin-top:36px}
+.foot{margin-top:clamp(58px,10vh,116px);padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+.foot p,.foot a{font-family:var(--mono);font-weight:600;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--fg-mute)}
+.foot a:hover{color:var(--fg)}
+.foot div{display:flex;gap:22px}
+
+/* --- interactive affordance --- */
+a,button,.cta,.ghost,.cap,.brand,.cc,.skr__t b,.nav__links a{cursor:pointer}
+.skr__t b,.cc__t b,.cap{cursor:default}
+.cc,.brand,.logo{-webkit-tap-highlight-color:transparent}
+
+/* --- reveals --- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .nav__links{display:none}
+  .burger{display:block}
+  .nav.open .nav__links{display:flex;flex-direction:column;gap:16px;align-items:flex-start;
+    position:absolute;top:calc(100% + 6px);left:var(--pad);right:var(--pad);
+    background:color-mix(in srgb,var(--nb) 92%,transparent);
+    -webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+    border:1px solid color-mix(in srgb,var(--nf) 13%,transparent);border-radius:20px;padding:22px 24px}
+  .nav__links a{font-size:14px;opacity:.85}
+  .hero__base{flex-direction:column;align-items:flex-start;gap:22px}
+  .hero__meta{text-align:left}
+  .about__grid{grid-template-columns:1fr}
+  .cg{grid-template-columns:1fr}
+  .skr{grid-template-columns:1fr;gap:16px}
+  .stats{grid-template-columns:1fr}
+  .stat{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:24px;padding-top:24px}
+  .stat:first-child{border-top:0;margin-top:0;padding-top:0}
+}
+@media (max-width:620px){
+  .say{font-size:clamp(1.35rem,6.4vw,2rem);line-height:1.52}
+  .pill{padding:.08em .42em .14em}
+  .hero__acts{width:100%}
+  .hero__acts .cta,.hero__acts .ghost{flex:1 1 auto;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+  .hero__cue i{animation:none}
+  .say .w{opacity:1;transform:none}
+  .rail__track{animation:none}
+}
+
+/* ==========================================================================
+   RESUME PAGE
+   ========================================================================== */
+.phead{padding:clamp(140px,19vh,210px) 0 clamp(80px,11vh,140px)}
+
+.phead__t{font-size:clamp(2.4rem,6.6vw,6.1rem);max-width:15ch;line-height:1.02;
+  letter-spacing:-.045em;font-weight:700;text-wrap:balance}
+.phead__t w{display:inline-block;color:color-mix(in srgb,var(--fg) 17%,transparent);
+  transition:color .35s ease}
+.phead__t w.lit{color:var(--fg)}
+.phead__t w.key{font-style:italic;font-weight:500}
+
+.phead__acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(38px,6vh,64px)}
+
+/* --- experience --- */
+.role{display:grid;grid-template-columns:clamp(230px,28vw,360px) minmax(0,1fr);
+  gap:clamp(24px,4vw,72px);padding:clamp(38px,6vh,68px) 0;border-bottom:1px solid var(--line);
+  align-items:start}
+.role:first-child{border-top:1px solid var(--line)}
+.role:last-child{border-bottom:0;padding-bottom:0}
+.role__co{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 104;
+  font-size:clamp(1.4rem,2.7vw,2.2rem);letter-spacing:-.032em;line-height:1.06}
+.role__t{font-size:16px;font-weight:600;margin-top:12px}
+.role__d{font-family:var(--mono);font-weight:600;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fg-mute);margin-top:12px;line-height:1.85}
+.role__growth{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--fg-mute);line-height:1.65}
+.role__growth b{color:var(--fg);font-weight:600;display:block;font-size:12px}
+.role__lead{font-size:16.5px;line-height:1.75;color:var(--fg-mute);max-width:60ch}
+.role__lead strong{color:var(--fg);font-weight:600}
+
+.did{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:16px}
+.did li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.7;color:var(--fg-mute);max-width:64ch}
+.did li::before{content:"";position:absolute;left:0;top:.68em;width:8px;height:1px;background:var(--fg-mute)}
+.did li b{color:var(--fg);font-weight:600}
+
+.tools{margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.tools h4{font-family:var(--mono);font-weight:600;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fg-mute);margin-bottom:14px}
+.tools div{display:flex;flex-wrap:wrap;gap:8px}
+.tools b{font-family:var(--body);font-weight:500;font-size:13.5px;border:1px solid var(--line);
+  border-radius:999px;padding:8px 15px;color:var(--fg-mute);
+  transition:color .28s var(--ease),background .28s var(--ease),border-color .28s var(--ease)}
+.tools b:hover{color:var(--bg);background:var(--fg);border-color:var(--fg)}
+
+/* --- competencies --- */
+.comp{display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.comp div{padding:clamp(22px,3.4vh,34px) clamp(16px,2.4vw,34px);
+  border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  display:flex;align-items:baseline;gap:14px;transition:background .35s var(--ease)}
+.comp div:hover{background:var(--surface)}
+.comp i{font-family:var(--mono);font-style:normal;font-weight:600;font-size:10.5px;
+  letter-spacing:.1em;color:var(--fg-mute);flex-shrink:0}
+.comp span{font-family:var(--display);font-weight:500;font-variation-settings:"wdth" 100;
+  font-size:clamp(.98rem,1.5vw,1.2rem);letter-spacing:-.022em;line-height:1.22}
+
+/* --- education / certifications --- */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.6vw,32px);align-items:stretch}
+.fact{border:1px solid var(--line);border-radius:4px;padding:clamp(24px,3vw,38px);
+  transition:border-color .4s var(--ease),transform .5s var(--ease)}
+.fact:hover{border-color:var(--fg);transform:translateY(-4px)}
+.fact__k{font-family:var(--mono);font-weight:600;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fg-mute)}
+.fact h3{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 104;
+  font-size:clamp(1.1rem,2vw,1.5rem);letter-spacing:-.028em;line-height:1.18;margin-top:16px}
+.fact p{color:var(--fg-mute);font-size:14.5px;line-height:1.7;margin-top:10px}
+.fact ul{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.fact ul li{font-family:var(--mono);font-weight:600;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;border:1px solid var(--line);border-radius:999px;
+  padding:6px 12px;color:var(--fg-mute)}
+
+/* --- download band --- */
+.dl{display:flex;align-items:center;justify-content:space-between;gap:clamp(24px,4vw,60px);
+  flex-wrap:wrap}
+.dl__t{max-width:38ch}
+.dl h2{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 104;
+  font-size:clamp(1.3rem,2.4vw,2rem);letter-spacing:-.03em;line-height:1.18}
+.dl p{color:var(--fg-mute);font-size:14.5px;margin-top:18px;line-height:1.7;max-width:44ch}
+
+@media (max-width:900px){
+  .role{grid-template-columns:1fr;gap:20px}
+  .comp{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr}
+  .phead__acts .cta,.phead__acts .ghost{flex:1 1 auto;justify-content:center}
+}
+@media (max-width:560px){
+  .comp{grid-template-columns:1fr}
+  .dl{flex-direction:column;align-items:flex-start;gap:32px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <div class="glass">
+      <a href="index.html" class="mark">Shivaani</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Projects</a>
+        <a href="works.html">Works</a>
+        <a href="shivaani-resume.html" aria-current="page">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="Shivaani_Resume.pdf" download>Resume</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== 01 · PAGE HEAD (dark) ===================== -->
+<section class="band band--light phead" data-band="light">
+  <div class="wrap">
+    <h1 class="phead__t disp" id="fill"><w>Four</w> <w>years</w> <w>in</w> <w>tech.</w> <w>Three</w> <w>of</w> <w>them</w> <w class="key">building,</w> <w>two</w> <w>of</w> <w>them</w> <w class="key">designing.</w></h1>
+
+    <div class="phead__acts">
+      <a class="cta cta--lg" href="Shivaani_Resume.pdf" download>Download resume</a>
+      <a class="ghost" href="index.html#work">View projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 · EXPERIENCE (light) ===================== -->
+<section class="band band--dark sec" id="experience" data-band="dark">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="sec__title disp">Experience</h2>
+      <span class="eyebrow">2022 – Present</span>
+    </div>
+
+    <!-- Lollypop -->
+    <article class="role">
+      <div>
+        <h3 class="role__co">Lollypop Design Studio</h3>
+        <p class="role__t">Associate UI/UX Designer</p>
+        <p class="role__d">Oct 2025 – Present<br>Chennai, India</p>
+      </div>
+
+      <div>
+        <p class="role__lead">
+          I design digital experiences across <strong>telecom, fintech, e-commerce and insurance</strong>,
+          from figuring out the flow to polishing the final screen. I work closely with developers,
+          project managers and clients to turn requirements into experiences that make sense on paper
+          and in the real world.
+        </p>
+
+        <ul class="did">
+          <li><b>ACT Fibernet</b> — Designed Network Insights and conversational AI experiences with ACT's engineering team, turning network and usage data into useful insights users can understand and act on. Also worked on plan screens, widgets and supporting journeys.</li>
+          <li><b>Poonawalla Fincorp</b> — Simplified loan servicing journeys across repayment, foreclosure and account management, making complex financial workflows easier to navigate.</li>
+          <li><b>Selected &amp; Jack &amp; Jones</b> — Designed key e-commerce experiences across home, mega menu, PLP, PDP and cart, balancing strong brand expression with easy product discovery and shopping.</li>
+          <li><b>Vero Moda</b> — Redesigned the complete website UI, transforming a template-driven store into a cleaner, more cohesive and elevated shopping experience.</li>
+          <li><b>Royal Sundaram</b> — Designed an insurance details experience that brings the information users need to understand their coverage and make a decision into one clear journey.</li>
+        </ul>
+
+        <div class="tools">
+          <h4>Stack &amp; tools</h4>
+          <div><b>UI</b><b>UX</b><b>Design System</b><b>Mood boarding</b><b>Prototyping</b><b>Figma</b><b>Figjam</b><b>Notion</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Accenture -->
+    <article class="role">
+      <div>
+        <h3 class="role__co">Accenture</h3>
+        <p class="role__t">Application Development Analyst</p>
+        <p class="role__d">Sep 2022 – Jun 2025<br>Chennai, India</p>
+        <div class="role__growth">
+          <b>Growth path</b>
+          Application Development Analyst · Dec 2024 – Jun 2025<br>
+          Application Development Associate · Sep 2022 – Dec 2024
+        </div>
+      </div>
+
+      <div>
+        <p class="role__lead">
+          <strong>Caterpillar Inc.</strong> — Worked across the front end and back end of an
+          e-commerce platform, which is where design and engineering stopped being separate jobs
+          for me.
+        </p>
+
+        <ul class="did">
+          <li><b>Led design and development</b> on the Checkout &amp; Payment modules, delivering a secure, intuitive and conversion-optimised customer experience.</li>
+          <li>Resolved <b>200+ cross-functional issues</b> across web and mobile platforms, improving performance, functionality and user satisfaction.</li>
+          <li>Applied <b>design thinking and agile methodologies</b> to align digital experiences with evolving business objectives and customer expectations.</li>
+          <li>Implemented <b>security protocols</b> safeguarding user data and ensuring platform resilience, compliance and trust.</li>
+          <li>Documented technical processes, accelerating team onboarding, knowledge transfer and collaboration across development cycles.</li>
+        </ul>
+
+        <div class="tools">
+          <h4>Stack &amp; tools</h4>
+          <div><b>React JS</b><b>Java</b><b>Oracle SQL</b><b>HCL Commerce</b><b>Figma</b><b>Azure DevOps</b></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== 03 · COMPETENCIES (light) ===================== -->
+<section class="band band--light sec" data-band="light">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="sec__title disp">Core competencies</h2>
+      <span class="eyebrow">What I'm brought in for</span>
+    </div>
+
+    <div class="comp">
+      <div><i>01</i><span>User &amp; human-centred design</span></div>
+      <div><i>02</i><span>Information architecture</span></div>
+      <div><i>03</i><span>User journey mapping</span></div>
+      <div><i>04</i><span>Persona creation</span></div>
+      <div><i>05</i><span>Wireframing &amp; prototyping</span></div>
+      <div><i>06</i><span>Interaction &amp; visual design</span></div>
+      <div><i>07</i><span>Usability testing</span></div>
+      <div><i>08</i><span>Design thinking &amp; problem solving</span></div>
+      <div><i>09</i><span>Accessibility (WCAG 2.0)</span></div>
+      <div><i>10</i><span>Agile &amp; scrum delivery</span></div>
+      <div><i>11</i><span>Version control</span></div>
+      <div><i>12</i><span>Continuous integration &amp; deployment</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 · EDUCATION &amp; MORE (dark) ===================== -->
+<section class="band band--dark sec" data-band="dark">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="sec__title disp">Education &amp; certification</h2>
+      <span class="eyebrow">2018 – 2022</span>
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <p class="fact__k">Education · 2018 – 2022</p>
+        <h3>B.E. Electronics &amp; Communication Engineering</h3>
+        <p>SRM Easwari Engineering College, affiliated to Anna University. Chennai, India. CGPA 8.53.</p>
+      </div>
+
+      <div class="fact">
+        <p class="fact__k">Certification</p>
+        <h3>AWS Certified Cloud Practitioner</h3>
+        <p>Amazon Web Services. Foundational cloud architecture, services and deployment.</p>
+      </div>
+
+      <div class="fact">
+        <p class="fact__k">Training · Feb 2024 – Aug 2024</p>
+        <h3>UI/UX Design Certification</h3>
+        <p>Lollypop Design Academy. Hands-on work in user research, journey mapping, wireframing, prototyping and usability testing, with team projects simulating real client environments.</p>
+      </div>
+
+      <div class="fact">
+        <p class="fact__k">Languages</p>
+        <h3>English, Tamil, Hindi, Telugu</h3>
+        <p>Comfortable running a workshop or presenting design rationale in any of them.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== 05 · DOWNLOAD (light) ===================== -->
+<section class="band band--light sec" data-band="light">
+  <div class="wrap">
+    <div class="dl">
+      <div class="dl__t">
+        <p class="eyebrow" style="margin-bottom:14px;font-size:11px">The PDF</p>
+        <h2 class="disp">Want the one-pager instead?</h2>
+        <p>Same content, laid out for a print or an applicant tracking system. Take it into your next conversation.</p>
+      </div>
+      <a class="cta cta--lg" href="Shivaani_Resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 · CONTACT (dark) ===================== -->
+<footer class="band band--dark contact" id="contact" data-band="dark">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:24px">Contact</p>
+    <h2 class="contact__h disp">Let's build <i>something that works.</i></h2>
+    <a class="contact__mail" href="mailto:shivaani.mks@gmail.com">shivaani.mks@gmail.com</a>
+    <div class="contact__acts">
+      <a class="cta cta--lg" href="Shivaani_Resume.pdf" download>Download resume</a>
+      <a class="ghost" href="https://www.linkedin.com/in/shivaani-mathan-kandasamy" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="ghost" href="tel:+917824021499">+91 78240 21499</a>
+    </div>
+    <div class="foot">
+      <p>© 2026 Shivaani Mathan Kandasamy · Associate UI/UX Designer</p>
+      <div><a href="#top">Back to top</a><p>Chennai, India</p></div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- nav: glass inverts over light bands ---- */
+  var nav = document.getElementById('nav');
+  var bands = [].slice.call(document.querySelectorAll('[data-band]'));
+  function paintNav(){
+    var y = nav.getBoundingClientRect().bottom - 16;
+    for (var i = bands.length - 1; i >= 0; i--){
+      var r = bands[i].getBoundingClientRect();
+      if (r.top <= y && r.bottom > y){
+        nav.classList.toggle('on-light', bands[i].dataset.band === 'light');
+        return;
+      }
+    }
+  }
+  paintNav();
+  addEventListener('scroll', paintNav, {passive:true});
+  addEventListener('resize', paintNav);
+
+  var burger = document.getElementById('burger');
+  burger.addEventListener('click', function(){
+    var o = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', o ? 'true' : 'false');
+  });
+  document.getElementById('navLinks').addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* ---- hero: wordmark lines rise, then the plate settles ---- */
+  /* ---- page head fills as you scroll, same as the About statement ---- */
+  var fill = document.getElementById('fill');
+  var fwords = [].slice.call(fill.querySelectorAll('w'));
+  function litFill(){
+    var r = fill.getBoundingClientRect(), vh = innerHeight;
+    var p = (vh * 0.84 - r.top) / (vh * 0.5 + r.height);
+    p = Math.max(0, Math.min(1, p));
+    var n = Math.round(p * fwords.length);
+    fwords.forEach(function(w, i){ w.classList.toggle('lit', i < n); });
+  }
+  if (reduce){ fwords.forEach(function(w){ w.classList.add('lit'); }); }
+  else { litFill(); addEventListener('scroll', litFill, {passive:true}); addEventListener('resize', litFill); }
+
+  /* ---- scroll reveals ---- */
+  var io = new IntersectionObserver(function(en){
+    en.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.13, rootMargin:'0px 0px -5% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el, i){
+    el.style.transitionDelay = ((i % 4) * 0.08) + 's';
+    io.observe(el);
+  });
+
+  /* ---- about statement: words light up as you scroll ---- */
+
+  /* ---- in-page anchors: re-settle as lazy images change the page height ---- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    var n = 0, t = setInterval(function(){
+      el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      if (++n > 10) clearInterval(t);
+    }, 350);
+  });
+
+})();
+</script>
+</body>
+</html>
